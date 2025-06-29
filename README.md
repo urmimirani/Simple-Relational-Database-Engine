@@ -86,17 +86,6 @@ g++ -std=c++17 -o database_engine main.cpp
 
 ---
 
-## File Structure
-
-project_root/
-├── main.cpp              # Complete source code
-├── README.md            # This file
-└── data/                # Created automatically
-    └── <database_name>/
-        └── <table_name>.tbl
-
----
-
 ## Limitations
 
 This database engine is currently single-threaded with no support for concurrent access. It loads all data into memory during operation and supports only a basic subset of SQL, without joins or the ability to alter table structures. Transactions and ACID compliance are not implemented. Performance-wise, the entire database is saved to disk on each SAVE command, and due to in-memory processing, it's best suited for small to medium datasets under 1GB.
